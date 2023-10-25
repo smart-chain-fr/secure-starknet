@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "target": "es6",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "dist",
+      "alwaysStrict": true,
+      "types": [
+        "mocha",
+        "node"
+      ],
+      "typeRoots": [
+        "@types",
+        "node_modules/@types"
+      ]
+    },
+    "lib": [
+      "es2015"
+    ]
+  }
