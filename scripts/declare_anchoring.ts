@@ -19,7 +19,7 @@ const accountAddress = process.env.ACCOUNT_ADDRESS;
 
 const account = new Account(provider, accountAddress, privateKey);
 
-console.log(account)
+// console.log(account)
 
 const declare = async () => {
     try {

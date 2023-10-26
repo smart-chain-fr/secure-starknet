@@ -17,15 +17,15 @@ curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scr
 
 ## Deployed on Testnet
 
-anchoring contract class hash: `0xcc13ee627a2e6d04e16235c47383327c44b902bad98dbbad121b605fe0f0a6`
-factory contract class hash: `0xef4a4829c14acea7d0d7f32b3a937d33106d2ed3d8208ff73020cb9bcbab7`
-factory contract instance: `0x1be1e2a2c9598e75050375e3d6cfc5570d5306c06fb59e267151a4517f4ca8`
-an anchoring contract instance has been generated at: `0x44f99149391e619aaaf55c31fbb9fca8cf4ba542ff961a4999305c3e790e17f`
+anchoring contract class hash: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
+factory contract class hash: `0x317b17f68ac153f19f04a9b6117b77553910e051ee356ab077417a884c5b4c5`
+factory contract instance: `0x4b76da8728b2ad07d5be3d81fe3ffb466a74f272cf94195d79076c75afc0fbe`
+an anchoring contract instance has been generated at: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6ac49d337dec6e0246473d2b`
 
 
 ## Smart contracts
 
-This repository involves two contracts: the Factory contract and the Anchoring contract. This repository contains the implementation of factory and anchoring contracts written in cairo v2.2.0.
+This repository involves two contracts: the Factory contract and the Anchoring contract. This repository contains the implementation of factory and anchoring contracts written in cairo v2.3.0.
 
 The Factory contract provides an invokable function (`deploy`) to deploy a new anchor contract on-demand. This function can only be called by the administrator role of the Factory.
 
@@ -59,7 +59,7 @@ The creation of an instance of Factory contract (i.e. deployment of a Factory co
 
 ### Anchoring Contract:  
 
-The Anchoring contract is responsible for anchoring messages (typically hashes of some data).
+The Anchoring contract is responsible for anchoring a hash (SHA-256). 
 
 #### Features:
 - Administration: The Anchoring contract contains an admin role. Only this admin can add/remove a user from the whitelist with `authorize` and `unauthorize` functions .
@@ -126,13 +126,14 @@ It should produce locally a file `deployments/factory.ts` with the address of th
 `make generate-anchoring`
 It should produce locally a file `deployments/anchoring.ts` with the address of the anchoring smart contract.
 
-### Anchor some !
-- Anchor a message
-`make anchor-message MSG=itworks!`
+### Anchor a hash !
+- Anchor a message. The message is a SHA-256 hash (without the '0x' prefix)
+`make anchor-message MSG=1c4c85d3c9855a6f87551d7672b5459d8de5844e20c7cdd8526f78885e31eed9`
 - you can also specify the Anchoring contract address as a CLI variable
-```make anchor-message MSG=toto ANCHORING=0x25d4362a6ff1ddc360126ddc8756c13eedbc4e046a7b0c898ce972f68565a4c```
-
-As you can see the message is specified as a text. Behind the `make anchor-message` command there is a script that transforms the data into hexadecimal before calling the `anchor` entrypoint of the Anchoring contract.
+```
+make anchor-message MSG=1c4c85d3c9855a6f87551d7672b5459d8de5844e20c7cdd8526f78885e31eed9 ANCHORING=0x240621f865df3ca79dc1a614d60f06310e19d8c6ac49d337dec6e0246473d2b
+```
+As you can see the message is specified as a 256-bit hash. Behind the `make anchor-message` command there is a script that splits the given hash into 2 felts before calling the `anchor` entrypoint of the Anchoring contract.
 
 
 

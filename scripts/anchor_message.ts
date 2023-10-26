@@ -40,8 +40,8 @@ const parse_args = async () => {
 
 const message_split = (message) => {
     console.log("[split] message", message);
-    const msg_part_1 = message.slice(0, 16);
-    const msg_part_2 = message.slice(16, 32);
+    const msg_part_1 = message.slice(0, 32);
+    const msg_part_2 = message.slice(32, 64);
     return [msg_part_1, msg_part_2];
 };
 
@@ -60,12 +60,13 @@ const anchor_message = async () => {
 
         // Anchor a message
         console.log("Attempt to anchor message (part 1):", msg_part_1);
-        let message_hexa_1 = Buffer.from(msg_part_1, 'utf8').toString('hex');
-        let param_1 = `0x${message_hexa_1}`;
+        // let message_hexa_1 = Buffer.from(msg_part_1, 'utf8').toString('hex');
+        // let param_1 = `0x${message_hexa_1}`;
+        let param_1 = `0x${msg_part_1}`;
         console.log("Attempt to anchor message (part 2):", msg_part_2);
-        let message_hexa_2 = Buffer.from(msg_part_2, 'utf8').toString('hex');
-        let param_2 = (message_hexa_2.length) > 0 ? `0x${message_hexa_2}` : 0x0;
-
+        // let message_hexa_2 = Buffer.from(msg_part_2, 'utf8').toString('hex');
+        // let param_2 = (message_hexa_2.length) > 0 ? `0x${message_hexa_2}` : 0x0;
+        let param_2 = `0x${msg_part_2}`;
         const myCall = anchoringContract.populate("anchor", [param_1,param_2]);
         console.log('Prepare argument for anchor invocation', myCall.calldata);
         const anchorCallResponse = await anchoringContract['anchor'](myCall.calldata);
