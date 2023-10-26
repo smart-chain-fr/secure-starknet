@@ -18,7 +18,8 @@ sierra-replace-ids = true
 
 [[target.starknet-contract]]
 casm = true
+
 # build-external-contracts = ["openzeppelin::account::account::Account"]
 
 [scripts]
-test = "snforge factory_anchor_long"
+test = "snforge test factory_anchor_long"

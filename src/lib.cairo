@@ -6,9 +6,9 @@ mod tests {
     use snforge_std::{ declare, ContractClassTrait, start_prank, stop_prank, PrintTrait };
     use core::traits::PanicDestruct;
     use starknet::ContractAddress;
-    use factory_anchor::factory::FactoryTraitDispatcherTrait;
+    use factory_anchor_long::factory::FactoryTraitDispatcherTrait;
     use super::factory;
-    use factory_anchor::anchoring::AnchorTraitDispatcherTrait;
+    use factory_anchor_long::anchoring::AnchorTraitDispatcherTrait;
     use super::anchoring;
     use test::test_utils::assert_eq;
     // use core::option::OptionTrait;
@@ -316,8 +316,9 @@ mod tests {
         assert_eq(@all_anchors_before.len(), @0, 'Wrong_number_of_anchors');
 
         start_prank(anchor_address, anchor_admin.try_into().unwrap());
-        let message : felt252 = 'test';
-        anchor_dispatcher.anchor(message);
+        let message_part_1 : felt252 = 'test_part_1';
+        let message_part_2 : felt252 = 'test_part_2';
+        anchor_dispatcher.anchor(message_part_1, message_part_2);
         stop_prank(anchor_address);
 
         let all_anchors_after = anchor_dispatcher.get_anchored_values();
@@ -362,7 +363,8 @@ mod tests {
         
         // Anchor a test message with caller not whitelisted
         let message : felt252 = 'test';
-        anchor_dispatcher.anchor(message);
+        let message2 : felt252 = 'test2';
+        anchor_dispatcher.anchor(message, message2);
     }
 
 }

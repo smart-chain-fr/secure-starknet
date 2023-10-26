@@ -24,8 +24,8 @@ console.log(account)
 const declare = async () => {
     try {
         // Declare Test contract in devnet
-        const compiledContract = json.parse(fs.readFileSync("../target/dev/factory_anchor_Factory.sierra.json").toString("ascii"));
-        const compiledContractCasm = json.parse(fs.readFileSync("../target/dev/factory_anchor_Factory.casm.json").toString("ascii"));
+        const compiledContract = json.parse(fs.readFileSync("../target/dev/factory_anchor_long_Factory.contract_class.json").toString("ascii"));
+        const compiledContractCasm = json.parse(fs.readFileSync("../target/dev/factory_anchor_long_Factory.compiled_contract_class.json").toString("ascii"));
         const declareResponse = await account.declare({ contract: compiledContract, casm: compiledContractCasm });
         await provider.waitForTransaction(declareResponse.transaction_hash);
 

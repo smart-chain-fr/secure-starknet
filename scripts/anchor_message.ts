@@ -35,9 +35,20 @@ const parse_args = async () => {
     }
 };
 
+//4bb7a8b99609b0b8b1d534694bb1f31f129138a2f2a11f8e8702eedbb792922e
+//1c4c85d3c9855a6f87551d7672b5459d8de5844e20c7cdd8526f78885e31eed9
+
+const message_split = (message) => {
+    console.log("[split] message", message);
+    const msg_part_1 = message.slice(0, 16);
+    const msg_part_2 = message.slice(16, 32);
+    return [msg_part_1, msg_part_2];
+};
+
 const anchor_message = async () => {
     try {
         const [ANCHORING_ADDRESS, message] = await parse_args();
+        const [msg_part_1, msg_part_2] = message_split(message);
 
         // read abi of Test contract
         const { abi: anchoringAbi } = await provider.getClassAt(ANCHORING_ADDRESS);
@@ -48,10 +59,14 @@ const anchor_message = async () => {
         anchoringContract.connect(account);
 
         // Anchor a message
-        console.log("Attempt to anchor message:", message);
-        let message_hexa = Buffer.from(message, 'utf8').toString('hex');
-        let param = `0x${message_hexa}`;
-        const myCall = anchoringContract.populate("anchor", [param]);
+        console.log("Attempt to anchor message (part 1):", msg_part_1);
+        let message_hexa_1 = Buffer.from(msg_part_1, 'utf8').toString('hex');
+        let param_1 = `0x${message_hexa_1}`;
+        console.log("Attempt to anchor message (part 2):", msg_part_2);
+        let message_hexa_2 = Buffer.from(msg_part_2, 'utf8').toString('hex');
+        let param_2 = (message_hexa_2.length) > 0 ? `0x${message_hexa_2}` : 0x0;
+
+        const myCall = anchoringContract.populate("anchor", [param_1,param_2]);
         console.log('Prepare argument for anchor invocation', myCall.calldata);
         const anchorCallResponse = await anchoringContract['anchor'](myCall.calldata);
         // const anchorCallResponse = await anchoringContract.anchor(myCall.calldata);
@@ -60,7 +75,7 @@ const anchor_message = async () => {
         console.log("✅ Anchor message.", anchorCallResponse);
 
         // Get timestamp of the anchored message
-        let anchoredTimestampResponse = await anchoringContract.call("get_anchored_timestamp", [param]);
+        let anchoredTimestampResponse = await anchoringContract.call("get_anchored_timestamp", [param_1, param_2]);
         // console.log(`anchoredTimestampResponse : ${anchoredTimestampResponse}`);
         let dateFormat = new Date(1970, 0, 1);
         dateFormat.setSeconds(Number(anchoredTimestampResponse));

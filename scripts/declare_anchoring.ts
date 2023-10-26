@@ -26,7 +26,7 @@ const declare = async () => {
         // Declare Test contract in devnet
         const compiledContract = json.parse(fs.readFileSync("../target/dev/factory_anchor_long_Anchoring.contract_class.json").toString("ascii"));
         const compiledContractCasm = json.parse(fs.readFileSync("../target/dev/factory_anchor_long_Anchoring.compiled_contract_class.json").toString("ascii"));
-        const declareResponse = await account.declare({ contract: compiledContract, compiledClassHash: compiledContractCasm });
+        const declareResponse = await account.declare({ contract: compiledContract, casm: compiledContractCasm });
         await provider.waitForTransaction(declareResponse.transaction_hash);
 
         console.log("✅ Contract declared.", declareResponse.class_hash);
