@@ -1,4 +1,7 @@
 # Starknet - anchor
+
+Anchoring smart contracts that supports a SHA-256 message (double felt).
+
 This repository implements an "anchoring" feature via a smart contract on Starknet.
 This repository provides smart contracts, tests and scripts for deploying a factory of anchoring contracts.
 
