@@ -1,6 +1,6 @@
 # Secure - starknet
 
-This repository implements a traceability tool for writing hashes on the Starknet blockchain.
+Traceability tool for writing hashes on the Starknet blockchain.
 
 
 ## Features
