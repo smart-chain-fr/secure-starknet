@@ -1,11 +1,19 @@
-# Starknet - anchor
+# Secure - starknet
 
-Anchoring smart contracts that supports a SHA-256 message (double felt).
+This repository implements a traceability tool for writing hashes on the Starknet blockchain.
 
-This repository implements an "anchoring" feature via a smart contract on Starknet.
-This repository provides smart contracts, tests and scripts for deploying a factory of anchoring contracts.
+scarb: 2.3.1 (0c8def3aa 2023-10-31)
+cairo: 2.3.1 (https://crates.io/crates/cairo-lang-compiler/2.3.1)
+snforge: 0.10.2
+sierra: 1.3.0
 
-## prerequisite
+Testnet anchoring contract class example: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
+Testnet factory contract class example: `0x317b17f68ac153f19f04a9b6117b77553910e051ee356ab077417a884c5b4c5`
+Testnet factory contract example: `0x4b76da8728b2ad07d5be3d81fe3ffb466a74f272cf94195d79076c75afc0fbe`
+Testnet anchoring contract example: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6ac49d337dec6e0246473d2b`
+
+
+## Prerequisites
 
 scarb - https://docs.swmansion.com/scarb/download.html
 ```
@@ -17,24 +25,25 @@ snforge - https://github.com/foundry-rs/starknet-foundry
 curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
 ```
 
+## Features
 
-## Deployed on Testnet
+* Anchoring hashes on Starknet blockchain
+* Serialisation of smart-contrats with a factory
+* Advanced hashes recuperation fonctions
+* Administrator roles management
+* Whitelisting autorised users
+* Upgradability of the Anchoring contract
+* Low cost transaction
 
-anchoring contract class hash: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
-factory contract class hash: `0x317b17f68ac153f19f04a9b6117b77553910e051ee356ab077417a884c5b4c5`
-factory contract instance: `0x4b76da8728b2ad07d5be3d81fe3ffb466a74f272cf94195d79076c75afc0fbe`
-an anchoring contract instance has been generated at: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6ac49d337dec6e0246473d2b`
+## Architecture
+
+This repository involves a `Factory` smart-contracts which can create new `Anchoring` smart-contracts on-demand. The Anchoring contract provides a callable function (`anchor`) to anchor a message. This function can only be called by users that have been whitelisted on the Anchoring contract. The administrator role of the Anchoring contract can `authorize` or `unauthorize` some users.
+
+This function can only be called by the administrator role of the Factory.
 
 
-## Smart contracts
 
-This repository involves two contracts: the Factory contract and the Anchoring contract. This repository contains the implementation of factory and anchoring contracts written in cairo v2.3.0.
-
-The Factory contract provides an invokable function (`deploy`) to deploy a new anchor contract on-demand. This function can only be called by the administrator role of the Factory.
-
-The Anchoring contract provides a callable function (`anchor`) to anchor a message. This function can only be called by users that have been whitelisted on the Anchoring contract. The administrator role of the Anchoring contract can `authorize` or `unauthorize` some users.
-
-These two contracts also provides "getter" function that retieves specific information from the storage (more details in the following sections).
+These two contracts also provides "getter" function that retrieves specific information from the storage (more details in the following sections).
 
 
 ### Factory Contract  
@@ -78,7 +87,7 @@ The Anchoring contract is responsible for anchoring a hash (SHA-256).
 
 
 
-## How to deploy and interact with the contract (using Makefile)
+## Usage
 
 ### Setup
 
