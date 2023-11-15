@@ -1,6 +1,6 @@
 # Secure - starknet
 
-A traceability tool for writing hashes on the Starknet blockchain.
+A traceability tool for writing and requesting hash digests (SHA-256) on the Starknet blockchain.
 
 ## Table Of Contents
 
@@ -17,7 +17,7 @@ A traceability tool for writing hashes on the Starknet blockchain.
 
 ## Abstract
 
-Traceability and proof of existence play indispensable roles in ensuring the credibility, reliability, and integrity of information. We leverage the Starknet blockchain to propose a powerful utility designed for professionnals managing a lot of data.
+Traceability and proof of existence play indispensable roles in ensuring the credibility, reliability, and integrity of information. By comparing two digests of a file, one can determine whether any changes have been made to the file. File integrity can therefore be garanted. We leverage the Starknet blockchain to propose a powerful utility designed for managing digests for professionnals.
 
 ### Key Features
 
@@ -184,8 +184,3 @@ As you can see the message is specified as a 256-bit hash. Behind the `make anch
 ## License
 
 MIT © Smart-Chain
-
-
-
-
-
