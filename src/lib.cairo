@@ -17,7 +17,6 @@ mod tests {
     // use traits::TryInto;
 
     #[test]
-    #[available_gas(1000000)]
     fn success_initial_state() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         let class_hash = 0x2bcad2faa9adef1787dca061d108ab3e0eb4d4916fdc4642517c4102003b21c;
@@ -40,7 +39,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(1000000)]
     #[should_panic(expected: ('NOT_ADMIN_CALLER', ))]
     fn failure_change_admin_because_not_admin() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
@@ -63,7 +61,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(1000000)]
     fn success_change_admin() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         let class_hash = 0x2bcad2faa9adef1787dca061d108ab3e0eb4d4916fdc4642517c4102003b21c;
@@ -93,7 +90,6 @@ mod tests {
 
 
     #[test]
-    #[available_gas(1000000)]
     fn success_change_and_accept_admin() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         let class_hash = 0x2bcad2faa9adef1787dca061d108ab3e0eb4d4916fdc4642517c4102003b21c;
@@ -125,7 +121,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(1000000)]
     #[should_panic(expected: ('NOT_PROPOSED_ADMIN_CALLER', ))]
     fn failure_accept_admin_because_not_proposed_admin() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
@@ -152,7 +147,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(1000000)]
     fn success_deploy() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         // let class_hash = 0x2bcad2faa9adef1787dca061d108ab3e0eb4d4916fdc4642517c4102003b21c;
@@ -187,7 +181,6 @@ mod tests {
 
 
     #[test]
-    #[available_gas(10000000)]
     fn anchoring_authorize_success() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         // declare contracts
@@ -220,7 +213,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(10000000)]
     fn anchoring_unauthorize_success() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         // declare contracts
@@ -253,7 +245,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(10000000)]
     #[should_panic(expected: ('NOT_ADMIN_CALLER', ))]
     fn anchoring_unauthorize_failure_because_not_admin() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
@@ -285,7 +276,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(20000000)]
     fn anchoring_anchor_success() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;
         // declare contracts
@@ -334,7 +324,6 @@ mod tests {
     }
 
     #[test]
-    #[available_gas(20000000)]
     #[should_panic(expected: ('NOT_WHITELISTED', ))]
     fn anchoring_anchor_failure_because_not_whitelisted() {
         let admin: felt252 = 0x021b328153b45744778795f5c8edd9211da72fca894ef91ea389c479a31f1449;

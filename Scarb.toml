@@ -1,7 +1,10 @@
 [package]
 name = "factory_anchor_long"
-version = "0.1.0"
-authors = ["Frank Hillard <frank.hillard@gmail.com>"]
+version = "0.8.0"
+authors = [
+  "Frank Hillard <frank.hillard@gmail.com>",
+  "Jeremy Martin <jeremy.martin@smart-chain.fr>"
+]
 description = "Factory of anchoring contracts."
 readme = "README.md"
 license = "MIT"
@@ -11,7 +14,7 @@ keywords = ["factory", "anchor", "starknet"]
 
 [dependencies]
 starknet = "2.3.0"
-snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry.git", tag = "v0.9.0" }
+snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry.git", tag = "v0.10.2" }
 
 [cairo]
 sierra-replace-ids = true
