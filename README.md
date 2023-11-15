@@ -17,7 +17,7 @@ A traceability tool for writing hashes on the Starknet blockchain.
 
 ## Abstract
 
-Traceability and proof of existence play indispensable roles in ensuring the credibility, reliability, and integrity of information. We leverage the power and speed of the Starknet blockchain to propose a powerful utility designed for professionnals managing a lot of data.
+Traceability and proof of existence play indispensable roles in ensuring the credibility, reliability, and integrity of information. We leverage the Starknet blockchain to propose a powerful utility designed for professionnals managing a lot of data.
 
 ### Key Features
 
@@ -55,7 +55,13 @@ This repository involves a `Factory` smart-contract which can create new `Anchor
 
 This function can only be called by the administrator role of the Factory.
 
-
+```mermaid
+graph LR
+    A[Square Rect] -- Link text --> B((Circle))
+    A --> C(Round Rect)
+    B --> D{Rhombus}
+    C --> D
+```
 
 These two contracts also provides "getter" function that retrieves specific information from the storage (more details in the following sections).
 
