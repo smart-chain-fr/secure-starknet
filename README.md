@@ -2,9 +2,25 @@
 
 This repository implements a traceability tool for writing hashes on the Starknet blockchain.
 
-scarb: 2.3.1 (0c8def3aa 2023-10-31)
+
+## Features
+
+* Anchoring hashes on Starknet blockchain
+* Serialisation of smart-contrats with a factory
+* Advanced hashes recuperation fonctions
+* Administrator roles management
+* Whitelisting autorised users
+* Upgradability of the Anchoring contract
+* Low cost transaction
+
+## Version
+  
+scarb: 2.3.1 (0c8def3aa 2023-10-31
+
 cairo: 2.3.1 (https://crates.io/crates/cairo-lang-compiler/2.3.1)
+
 snforge: 0.10.2
+
 sierra: 1.3.0
 
 Testnet anchoring contract class example: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
@@ -28,15 +44,6 @@ snforge - https://github.com/foundry-rs/starknet-foundry
 curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
 ```
 
-## Features
-
-* Anchoring hashes on Starknet blockchain
-* Serialisation of smart-contrats with a factory
-* Advanced hashes recuperation fonctions
-* Administrator roles management
-* Whitelisting autorised users
-* Upgradability of the Anchoring contract
-* Low cost transaction
 
 ## Architecture
 
