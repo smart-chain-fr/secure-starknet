@@ -16,7 +16,6 @@ Traceability tool for writing hashes on the Starknet blockchain.
 ## Version
   
 | Scarb   | 2.3.1  |
-|---------|--------|
 | Cairo   | 2.3.1  |
 | Sierra  | 1.3.0  |
 | Snforge | 0.10.2 |
