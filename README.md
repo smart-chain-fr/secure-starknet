@@ -1,9 +1,25 @@
 # Secure - starknet
 
-Traceability tool for writing hashes on the Starknet blockchain.
+A traceability tool for writing hashes on the Starknet blockchain.
+
+## Table Of Contents
+
+<!-- TOC -->
+
+- [Abstract](#Abstract)
+- [Architecture](#Architecture)
+- [Install](#Install)
+- [Usage](#Usage)
+- [License](#License)
+
+<!-- /TOC -->
 
 
-## Features
+## Abstract
+
+Traceability and proof of existence play indispensable roles in ensuring the credibility, reliability, and integrity of information. We leverage the power and speed of the Starknet blockchain to propose a powerful utility designed for professionnals managing a lot of data.
+
+### Key Features
 
 * Anchoring hashes on Starknet blockchain
 * Serialisation of smart-contrats with a factory
@@ -13,12 +29,15 @@ Traceability tool for writing hashes on the Starknet blockchain.
 * Upgradability of the Anchoring contract
 * Low cost transaction
 
-## Version
-  
-| Scarb   | 2.3.1  |
-| Cairo   | 2.3.1  |
-| Sierra  | 1.3.0  |
-| Snforge | 0.10.2 |
+### Version
+
+
+| Package  | Version |
+|----------|---------|
+| Scarb    | 2.3.1   |
+| Cairo    | 2.3.1   |
+| Sierra   | 1.3.0   |
+| Snforge  | 0.10.2  |
 
 Testnet anchoring contract class example: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
 
@@ -28,18 +47,6 @@ Testnet factory contract example: `0x4b76da8728b2ad07d5be3d81fe3ffb466a74f272cf9
 
 Testnet anchoring contract example: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6ac49d337dec6e0246473d2b`
 
-
-## Prerequisites
-
-Install scarb - https://docs.swmansion.com/scarb/download.html
-```
-curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
-```
-
-Install snforge - https://github.com/foundry-rs/starknet-foundry
-```
-curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
-```
 
 
 ## Architecture
@@ -92,6 +99,18 @@ The Anchoring contract is responsible for anchoring a hash (SHA-256).
 
 - Retrieval: One can retrieve an array of all anchored messages with the `get_anchored_values` function, an array of each of message timestamps with `get_anchored_timestamps` function. Additionally, one can retrieve the timestamp for a specific message that has been anchored with `get_anchored_timestamp` function.
 
+
+## Install
+
+Install scarb - https://docs.swmansion.com/scarb/download.html
+```
+curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
+```
+
+Install snforge - https://github.com/foundry-rs/starknet-foundry
+```
+curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
+```
 
 
 ## Usage
@@ -166,8 +185,9 @@ As you can see the message is specified as a 256-bit hash. Behind the `make anch
 - Congratulation!
 
 
+## License
 
-
+MIT © Smart-Chain
 
 
 
