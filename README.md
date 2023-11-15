@@ -15,13 +15,13 @@ Traceability tool for writing hashes on the Starknet blockchain.
 
 ## Version
   
-scarb: 2.3.1 (0c8def3aa 2023-10-31
+Scarb: 2.3.1
 
-cairo: 2.3.1 (https://crates.io/crates/cairo-lang-compiler/2.3.1)
+Cairo: 2.3.1
 
-snforge: 0.10.2
+Snforge: 0.10.2
 
-sierra: 1.3.0
+Sierra: 1.3.0
 
 Testnet anchoring contract class example: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
 
@@ -34,12 +34,12 @@ Testnet anchoring contract example: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6
 
 ## Prerequisites
 
-scarb - https://docs.swmansion.com/scarb/download.html
+Install scarb - https://docs.swmansion.com/scarb/download.html
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh
 ```
 
-snforge - https://github.com/foundry-rs/starknet-foundry
+Install snforge - https://github.com/foundry-rs/starknet-foundry
 ```
 curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scripts/install.sh | sh
 ```
@@ -47,7 +47,7 @@ curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scr
 
 ## Architecture
 
-This repository involves a `Factory` smart-contracts which can create new `Anchoring` smart-contracts on-demand. The Anchoring contract provides a callable function (`anchor`) to anchor a message. This function can only be called by users that have been whitelisted on the Anchoring contract. The administrator role of the Anchoring contract can `authorize` or `unauthorize` some users.
+This repository involves a `Factory` smart-contract which can create new `Anchoring` smart-contracts on-demand. The Anchoring contract provides a callable function (`anchor`) to anchor a message. This function can only be called by users that have been whitelisted on the Anchoring contract. The administrator role of the Anchoring contract can `authorize` or `unauthorize` some users.
 
 This function can only be called by the administrator role of the Factory.
 
