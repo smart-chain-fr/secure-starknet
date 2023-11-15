@@ -15,13 +15,11 @@ Traceability tool for writing hashes on the Starknet blockchain.
 
 ## Version
   
-Scarb: 2.3.1
-
-Cairo: 2.3.1
-
-Snforge: 0.10.2
-
-Sierra: 1.3.0
+| Scarb   | 2.3.1  |
+|---------|--------|
+| Cairo   | 2.3.1  |
+| Sierra  | 1.3.0  |
+| Snforge | 0.10.2 |
 
 Testnet anchoring contract class example: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
 
