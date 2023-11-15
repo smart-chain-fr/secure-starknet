@@ -53,17 +53,7 @@ Testnet anchoring contract example: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6
 
 This repository involves a `Factory` smart-contract which can create new `Anchoring` smart-contracts on-demand. The Anchoring contract provides a callable function (`anchor`) to anchor a message. This function can only be called by users that have been whitelisted on the Anchoring contract. The administrator role of the Anchoring contract can `authorize` or `unauthorize` some users.
 
-This function can only be called by the administrator role of the Factory.
-
-```mermaid
-graph LR
-    A[Square Rect] -- Link text --> B((Circle))
-    A --> C(Round Rect)
-    B --> D{Rhombus}
-    C --> D
-```
-
-These two contracts also provides "getter" function that retrieves specific information from the storage (more details in the following sections).
+This function can only be called by the administrator role of the Factory. These two contracts also provides "getter" function that retrieves specific information from the storage (more details in the following sections).
 
 
 ### Factory Contract  
