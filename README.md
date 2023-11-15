@@ -8,8 +8,11 @@ snforge: 0.10.2
 sierra: 1.3.0
 
 Testnet anchoring contract class example: `0x6c327a65f1445575597205314eb9b1af7bfb9222f2540f45b013fa2d86870a1`
+
 Testnet factory contract class example: `0x317b17f68ac153f19f04a9b6117b77553910e051ee356ab077417a884c5b4c5`
+
 Testnet factory contract example: `0x4b76da8728b2ad07d5be3d81fe3ffb466a74f272cf94195d79076c75afc0fbe`
+
 Testnet anchoring contract example: `0x0240621f865df3ca79dc1a614d60f06310e19d8c6ac49d337dec6e0246473d2b`
 
 
