@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>download-circle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="Artboard" transform="translate(-532.000000, -25.000000)" stroke="#95AAC9">
+            <g id="DL" transform="translate(530.000000, 23.000000)">
+                <g id="download-circle" transform="translate(3.000000, 3.000000)">
+                    <g id="Outline_Icons_1_">
+                        <g id="Outline_Icons">
+                            <g id="Group">
+                                <circle id="Oval" cx="7.66666667" cy="7.66666667" r="7.33333333"></circle>
+                                <path d="M7.66666667,12 L7.66666667,3.33333333" id="Path" stroke-linecap="round"></path>
+                                <polyline id="Path" stroke-linecap="round" points="11.3333333 8.33333333 7.66666667 12 4 8.33333333"></polyline>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53 (72520) - https://sketchapp.com -->
+    <title>hash</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-35.000000, -85.000000)">
+            <g id="details" transform="translate(36.000000, 61.000000)">
+                <g id="hash" transform="translate(0.000000, 24.000000)">
+                    <g id="Outline_Icons" stroke="#95AAC9" stroke-linecap="round" stroke-linejoin="round">
+                        <g id="Group">
+                            <path d="M1.2555,4.75 L11.7395,4.75" id="Path"></path>
+                            <path d="M0.2555,7.75 L10.7395,7.75" id="Path"></path>
+                            <path d="M3.25,11.75 L5.2555,0.25" id="Path"></path>
+                            <path d="M6.75,11.75 L8.7555,0.25" id="Path"></path>
+                        </g>
+                    </g>
+                    <g id="Invisible_Shape">
+                        <rect id="Rectangle" x="0" y="0" width="12" height="12"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

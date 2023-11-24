@@ -1,4 +1,21 @@
-target
-scripts/node_modules
-.env
-node_modules
+**/.env
+**/.env.development
+**/.env.production
+**/*.log
+**/node_modules
+**/dist
+**/build
+**/downloads
+**/screenshots
+**/yarn-error.log
+**/error.log
+
+# Windows
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+**/$RECYCLE.BIN/
+
+# OSX
+**/.DS_Store
+
